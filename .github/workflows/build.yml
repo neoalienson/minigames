@@ -36,6 +36,9 @@ jobs:
         with:
           submodules: recursive
       
+      - name: Test
+        run: sudo flutter build web --base-href "/minigames/"
+
       - name: Build
         run: sudo flutter build web --base-href "/minigames/"
       
