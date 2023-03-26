@@ -83,7 +83,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
-          name: hugo
+          name: flutter
           path: .
           
       - name: Upload zip file
@@ -98,8 +98,8 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               release_id: ${{ steps.create_release.outputs.result }},
-              name: "hugo.zip",
-              data: fs.readFileSync("hugo.zip"),
+              name: "flutter.zip",
+              data: fs.readFileSync("flutter.zip"),
               headers: {
                 'content-type': 'application/zip',
               },
