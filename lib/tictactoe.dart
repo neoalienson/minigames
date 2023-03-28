@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// you are a flutter developer. write a tic tac toe game in a page for 2 players. check for a winner or a draw. add a float button to restart the game
 
 class TicTacToePage extends StatefulWidget {
   const TicTacToePage({Key? key}) : super(key: key);

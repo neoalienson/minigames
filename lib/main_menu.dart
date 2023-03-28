@@ -22,19 +22,6 @@ class _MainMenuPageState extends State<MainMenuPage> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => TicTacToeScreen()),
-              );
-            },
-            child: ListTile(
-              leading: Icon(Icons.gamepad),
-              title: Text('Tic Tac Toe 3 players in 4 x 4'),
-              subtitle: Text('A modified game in 4 x 4 Grid for 3 players'),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
                 MaterialPageRoute(builder: (context) => TicTacToePage()),
               );
             },
@@ -44,6 +31,19 @@ class _MainMenuPageState extends State<MainMenuPage> {
               subtitle: Text('A classic game of Xs and Os'),
             ),
           ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => TicTacToe3x4Page()),
+              );
+            },
+            child: ListTile(
+              leading: Icon(Icons.gamepad),
+              title: Text('Tic Tac Toe 3 players in 4 x 4'),
+              subtitle: Text('A modified game in 4 x 4 Grid for 3 players'),
+            ),
+          ),          
           GestureDetector(
             onTap: () {
               Navigator.push(

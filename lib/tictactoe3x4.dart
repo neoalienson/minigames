@@ -1,12 +1,12 @@
 
 import 'package:flutter/material.dart';
 
-class TicTacToeScreen extends StatefulWidget {
+class TicTacToe3x4Page extends StatefulWidget {
   @override
-  _TicTacToeScreenState createState() => _TicTacToeScreenState();
+  TicTacToe3x4PageState createState() => TicTacToe3x4PageState();
 }
 
-class _TicTacToeScreenState extends State<TicTacToeScreen> {
+class TicTacToe3x4PageState extends State<TicTacToe3x4Page> {
   int _currentPlayer = 1;
   List<List<int>> _board = List.generate(4, (_) => List.generate(4, (_) => 0));
 
@@ -14,9 +14,92 @@ class _TicTacToeScreenState extends State<TicTacToeScreen> {
     if (_board[row][col] == 0) {
       setState(() {
         _board[row][col] = _currentPlayer;
-        _currentPlayer = (_currentPlayer % 3) + 1;
+
+        int result = checkForWinnerOrDraw(_board);
+        if (result != 0) {
+          String message;
+          if (result == 4) {
+            message = 'Draw!';
+          } else {
+            message = 'Player $result wins!';
+          }
+
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: const Text('Game Over'),
+                content: Text(message),
+                actions: [
+                  TextButton(
+                    onPressed: _resetGame,
+                    child: const Text('Play Again'),
+                  ),
+                ],
+              );
+            },
+          );
+        } else {
+          _currentPlayer = (_currentPlayer % 3) + 1;
+        }
       });
     }
+  }
+
+  int checkForWinnerOrDraw(List<List<int>> board) {
+    // Check rows
+    for (int row = 0; row < 4; row++) {
+      for (int col = 0; col < 2; col++) {
+        if (board[row][col] != 0 &&
+            board[row][col] == board[row][col + 1] &&
+            board[row][col + 1] == board[row][col + 2]) {
+          return board[row][col];
+        }
+      }
+    }
+
+    // Check columns
+    for (int col = 0; col < 4; col++) {
+      for (int row = 0; row < 2; row++) {
+        if (board[row][col] != 0 &&
+            board[row][col] == board[row + 1][col] &&
+            board[row + 1][col] == board[row + 2][col]) {
+          return board[row][col];
+        }
+      }
+    }
+
+    // Check diagonals
+    if (board[0][0] != 0 &&
+        board[0][0] == board[1][1] &&
+        board[1][1] == board[2][2]) {
+      return board[0][0];
+    }
+
+    if (board[0][3] != 0 &&
+        board[0][3] == board[1][2] &&
+        board[1][2] == board[2][1]) {
+      return board[0][3];
+    }
+
+    // Check for draw
+    bool hasEmptyTile = false;
+    for (int row = 0; row < 4; row++) {
+      for (int col = 0; col < 4; col++) {
+        if (board[row][col] == 0) {
+          hasEmptyTile = true;
+          break;
+        }
+      }
+      if (hasEmptyTile) {
+        break;
+      }
+    }
+    if (!hasEmptyTile) {
+      return 4;
+    }
+
+    return 0;
   }
 
   void _resetGame() {
@@ -52,7 +135,7 @@ class _TicTacToeScreenState extends State<TicTacToeScreen> {
     return GestureDetector(
       onTap: () => _onTileTap(row, col),
       child: Container(
-        margin: EdgeInsets.all(4),
+        margin: const EdgeInsets.all(4),
         height: 80,
         width: 80,
         decoration: BoxDecoration(
@@ -85,22 +168,22 @@ class _TicTacToeScreenState extends State<TicTacToeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tic Tac Toe: 3 Players'),
+        title: const Text('Tic Tac Toe: 3 Players'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             child: Text(
               'Player $_currentPlayer\'s turn',
-              style: TextStyle(fontSize: 24),
+              style: const TextStyle(fontSize: 24),
             ),
           ),
           Column(children: rows),
           TextButton(
             onPressed: _resetGame,
-            child: Text('Reset Game'),
+            child: const Text('Reset Game'),
           ),
         ],
       ),
