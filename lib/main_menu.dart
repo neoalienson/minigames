@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'tictactoe.dart';
 import 'tictactoe3x4.dart';
 import 'flappy_bird.dart';
+import 'shikaku_menu.dart';
 
 
 class MainMenuPage extends StatefulWidget {
@@ -43,21 +44,21 @@ class _MainMenuPageState extends State<MainMenuPage> {
               title: Text('Tic Tac Toe 3 players in 4 x 4'),
               subtitle: Text('A modified game in 4 x 4 Grid for 3 players'),
             ),
-          ),          
-          // GestureDetector(
-          //   onTap: () {
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(builder: (context) => FlappyBirdGame()),
-          //     );
-          //   },
-          //   child: ListTile(
-          //     leading: Icon(Icons.gamepad),
-          //     title: Text('Flappy Bird'),
-          //     subtitle: Text('A scrolling game where you avoid pipes'),
-          //   ),
-          // ),
-          // Add more games to the list here
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ShikakuGameMenu()),
+              );
+            },
+            child: ListTile(
+              leading: Icon(Icons.gamepad),
+              title: Text('Shikaku'),
+              subtitle: Text('Shikaku'),
+            ),
+          ),                  
+
         ],
       ),
     );
