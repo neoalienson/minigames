@@ -12,7 +12,7 @@ class _ShikakuGameMenuState extends State<ShikakuGameMenu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Game Menu'),
+        title: const Text('List of Shikaku Game'),
       ),
       body: ListView(
         children: [
