@@ -19,7 +19,6 @@ class _ShikakuGameState extends State<ShikakuGame> {
   final _logger = Logger('ShikakuGame');
   int colorIndex = 0;
   final List<Color> colors = [
-    Colors.white70,
     Colors.red,
     Colors.green,
     Colors.blue,
@@ -28,7 +27,16 @@ class _ShikakuGameState extends State<ShikakuGame> {
     Colors.pink,
     Colors.purple,
     Colors.teal,
-    ];
+    Colors.brown,
+    Colors.amber,
+    Colors.cyan,
+    Colors.deepOrange,
+    Colors.indigo,
+    Colors.lime,
+    Colors.lightBlue,
+    Colors.lightGreen,
+    Colors.deepPurple,
+  ];
 
   @override
   void initState() {
