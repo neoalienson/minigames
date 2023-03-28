@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'tictactoe.dart';
+import 'tictactoe3x4.dart';
+import 'flappy_bird.dart';
+
 
 class MainMenuPage extends StatefulWidget {
   @override
@@ -19,6 +22,19 @@ class _MainMenuPageState extends State<MainMenuPage> {
             onTap: () {
               Navigator.push(
                 context,
+                MaterialPageRoute(builder: (context) => TicTacToeScreen()),
+              );
+            },
+            child: ListTile(
+              leading: Icon(Icons.gamepad),
+              title: Text('Tic Tac Toe 3 players in 4 x 4'),
+              subtitle: Text('A modified game in 4 x 4 Grid for 3 players'),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
                 MaterialPageRoute(builder: (context) => TicTacToePage()),
               );
             },
@@ -26,6 +42,19 @@ class _MainMenuPageState extends State<MainMenuPage> {
               leading: Icon(Icons.gamepad),
               title: Text('Tic Tac Toe'),
               subtitle: Text('A classic game of Xs and Os'),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FlappyBirdGame()),
+              );
+            },
+            child: ListTile(
+              leading: Icon(Icons.gamepad),
+              title: Text('Flappy Bird'),
+              subtitle: Text('A scrolling game where you avoid pipes'),
             ),
           ),
           // Add more games to the list here
