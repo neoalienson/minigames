@@ -44,19 +44,19 @@ class _MainMenuPageState extends State<MainMenuPage> {
               subtitle: Text('A modified game in 4 x 4 Grid for 3 players'),
             ),
           ),          
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => FlappyBirdGame()),
-              );
-            },
-            child: ListTile(
-              leading: Icon(Icons.gamepad),
-              title: Text('Flappy Bird'),
-              subtitle: Text('A scrolling game where you avoid pipes'),
-            ),
-          ),
+          // GestureDetector(
+          //   onTap: () {
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(builder: (context) => FlappyBirdGame()),
+          //     );
+          //   },
+          //   child: ListTile(
+          //     leading: Icon(Icons.gamepad),
+          //     title: Text('Flappy Bird'),
+          //     subtitle: Text('A scrolling game where you avoid pipes'),
+          //   ),
+          // ),
           // Add more games to the list here
         ],
       ),
