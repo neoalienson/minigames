@@ -31,6 +31,21 @@ Prompts:
 - add a reset float button to fill grid with 0
 - create a function to check all value in grid is larger than 0. show a win game dialog[^2][^4]
 
+## Shikaku game board generator
+GPT3.5 turbo
+Prompts:
+- you are a flutter developer, write a function to generate a list for shikaku game.
+  default size is 5x5.
+  the function does not need input for number of rectangle.
+  minimal rectangle area must be 2.
+  rectangles must not overlap each other.
+  try to generate another rectangle if it cannot find a unoccupied space for the rectangle after trying 5 times.
+  after retries, check if any empty cell.
+- write a function to check smallest rectangle area. the input is a populated int array. in the array, each rectangle is represent by a number. 0 represent empty space.
+- write a function to convert the list array from rectangle index into 0. place a rectangle area value into a random space within the rectangle
+- place a rectangle area value into a random space within the rectangle instead of filling value.
+
+
 ## Whack a mole
 GPT3.5 turbo
 Prompt:
