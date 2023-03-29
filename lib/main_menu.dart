@@ -4,6 +4,7 @@ import 'tictactoe3x4.dart';
 import 'flappy_bird.dart';
 import 'shikaku_menu.dart';
 import 'hamster_race.dart';
+import 'whack_a_mole.dart';
 
 
 class MainMenuPage extends StatefulWidget {
@@ -69,6 +70,19 @@ class _MainMenuPageState extends State<MainMenuPage> {
             child: ListTile(
               leading: Icon(Icons.gamepad),
               title: Text('Hamster Race'),
+              subtitle: Text(''),
+            ),
+          ),  
+           GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => WhackAMoleGame()),
+              );
+            },
+            child: ListTile(
+              leading: Icon(Icons.gamepad),
+              title: Text('whack a hamster'),
               subtitle: Text(''),
             ),
           ),  
