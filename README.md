@@ -31,6 +31,16 @@ Prompts:
 - add a reset float button to fill grid with 0
 - create a function to check all value in grid is larger than 0. show a win game dialog[^2][^4]
 
+## Whack a mole
+GPT3.5 turbo
+Prompt:
+- as a flutter developer, code a whack a mole game with 1 player and 10 holes for hamsters to pop out
+- do not use flame
+- Vertical viewport was given unbounded height.
+- the hamster should randomly visible, and can be whack when it is visible
+- Non-nullable instance field '_timer' must be initialized.
+- _isVisibleList is not defined in HamsterHole
+
 ## Flappy Bird (WIP)
 Prompt:
 - create a flappy bird game in flutter. focus on the background scrolling. background scroll from right to left slowly, and then repeat.

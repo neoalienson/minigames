@@ -53,6 +53,47 @@ class _ShikakuGameMenuState extends State<ShikakuGameMenu> {
               subtitle: Text('5x5 puzzle id 2,000,000'),
             ),
           ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ShikakuGame(numbers:[
+                  0, 0, 0, 0, 0, 0,
+                  0, 0, 0, 0, 0, 0,
+                  0, 0, 0, 0, 0, 0,
+                  0, 0, 0, 0, 12, 0,
+                  0, 15, 0, 0, 3, 0,
+                  4, 0, 0, 0, 0, 2
+                  ])),
+              );
+            },
+            child: const ListTile(
+              leading: Icon(Icons.gamepad),
+              title: Text('Game 3'),
+              subtitle: Text('6x6 puzzle ai generated with brute force'),
+            ),            
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ShikakuGame(numbers: [
+                  0, 6, 0, 15, 0, 0, 0,
+                  0, 0, 0, 0, 0, 0, 0,
+                  0, 0, 0, 0, 0, 0, 0,
+                  0, 0, 0, 0, 0, 3, 0,
+                  0, 0, 0, 0, 0, 0, 0,
+                  16, 0, 0, 0, 0, 0, 0,
+                  0, 0, 0, 0, 9, 0, 0
+                  ])),
+              );
+            },
+            child: const ListTile(
+              leading: Icon(Icons.gamepad),
+              title: Text('Game 4'),
+              subtitle: Text('7x7 puzzle ai generated with brute force'),
+            ),            
+          ),
         ],
       ),
     );
