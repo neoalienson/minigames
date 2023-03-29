@@ -44,7 +44,7 @@ jobs:
 
       - name: Zip artifact
         run: |
-          cp -r assets build/web/assets
+          cp -r assets/* build/web/assets
           zip -r flutter.zip build/web
           
       - name: Upload artifact
