@@ -52,7 +52,7 @@ class _HamsterRaceScreenState extends State<HamsterRaceScreen> {
                     child: SizedBox(
                       width: 50,
                       height: 50,
-                      child: Image.asset('assets/hamster${i + 1}.png'),
+                      child: Image.asset('images/hamster${i + 1}.png'),
                     ),
                   )
         );
@@ -71,7 +71,7 @@ class _HamsterRaceScreenState extends State<HamsterRaceScreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/track.png'),
+            image: AssetImage('images/track.png'),
             repeat: ImageRepeat.repeat,
           ),
         ),

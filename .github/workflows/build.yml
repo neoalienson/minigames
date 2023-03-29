@@ -37,13 +37,14 @@ jobs:
           submodules: recursive
       
       - name: Test
-        run: sudo flutter test
+        run: flutter test
 
       - name: Build
-        run: sudo flutter build web --base-href "/minigames/"
-      
+        run: flutter build web --base-href "/minigames/"
+
       - name: Zip artifact
         run: |
+          cp -r assets build/web/assets
           zip -r flutter.zip build/web
           
       - name: Upload artifact

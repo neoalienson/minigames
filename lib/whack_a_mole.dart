@@ -99,7 +99,7 @@ class HamsterHole extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
         child: Center(
-          child: isVisibleList[index] ? Image.asset('assets/hamster1.png') : null,
+          child: isVisibleList[index] ? Image.asset('images/hamster1.png') : null,
         ),
       ),
     );
