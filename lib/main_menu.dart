@@ -3,6 +3,7 @@ import 'tictactoe.dart';
 import 'tictactoe3x4.dart';
 import 'flappy_bird.dart';
 import 'shikaku_menu.dart';
+import 'hamster_race.dart';
 
 
 class MainMenuPage extends StatefulWidget {
@@ -58,7 +59,19 @@ class _MainMenuPageState extends State<MainMenuPage> {
               subtitle: Text('Shikaku'),
             ),
           ),                  
-
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HamsterRaceScreen()),
+              );
+            },
+            child: ListTile(
+              leading: Icon(Icons.gamepad),
+              title: Text('Hamster Race'),
+              subtitle: Text(''),
+            ),
+          ),  
         ],
       ),
     );
