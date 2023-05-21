@@ -1,0 +1,15 @@
+trigger:
+- main
+
+pool:
+  name: Default
+
+steps:
+- script: flutter test
+  displayName: 'Test'
+- script: flutter build web --base-href "/minigames/"
+  displayName: 'Build'
+- script: |
+    cp -r assets/* build/web/assets
+    zip -r flutter.zip build/web
+  displayName: 'Zip artifact'
