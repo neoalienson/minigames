@@ -65,3 +65,6 @@ Image download from https://weeklyhow.com/flappy-bird-unity-tutorial/
 [^2]: reference to -1 in array
 [^3]: need to fix binding logic
 [^4]: refactored
+
+## Setup
+https://firebase.google.com/docs/flutter/setup?platform=ios

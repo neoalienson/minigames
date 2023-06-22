@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'tictactoe.dart';
 import 'tictactoe3x4.dart';
-import 'flappy_bird.dart';
 import 'shikaku_menu.dart';
 import 'hamster_race.dart';
 import 'whack_a_mole.dart';
-
+import 'utils/authentication.dart';
+import 'widgets/google_sign_in_button.dart';
+import '../res/custom_colors.dart';
 
 class MainMenuPage extends StatefulWidget {
   @override
@@ -13,6 +14,24 @@ class MainMenuPage extends StatefulWidget {
 }
 
 class _MainMenuPageState extends State<MainMenuPage> {
+  Widget signinButton(BuildContext context) {
+    return FutureBuilder(
+      future: Authentication.initializeFirebase(context: context),
+      builder: (context, snapshot) {
+        if (snapshot.hasError) {
+          return Text('Error initializing Firebase');
+        } else if (snapshot.connectionState == ConnectionState.done) {
+          return GoogleSignInButton();
+        }
+        return CircularProgressIndicator(
+          valueColor: AlwaysStoppedAnimation<Color>(
+            CustomColors.firebaseOrange,
+          ),
+        );
+      }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +40,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
       ),
       body: ListView(
         children: [
+          signinButton(context),
           GestureDetector(
             onTap: () {
               Navigator.push(
