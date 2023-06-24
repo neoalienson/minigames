@@ -3,7 +3,10 @@ import 'shikaku.dart';
 
 
 class ShikakuGameMenu extends StatefulWidget {
+  const ShikakuGameMenu({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _ShikakuGameMenuState createState() => _ShikakuGameMenuState();
 }
 
