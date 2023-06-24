@@ -1,7 +1,7 @@
 @Skip('Rewrite tests for new game logic')
 
 import "package:flutter_test/flutter_test.dart";
-import "package:minigames/tictactoe3x4.dart";
+import "package:minigames/ai_games/tictactoe3x4.dart";
 
 void main() {
   test('Empty board should return 0', () {

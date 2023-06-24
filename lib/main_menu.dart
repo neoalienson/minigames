@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:minigames/risk/risk.dart';
-import 'tictactoe.dart';
-import 'tictactoe3x4.dart';
-import 'shikaku_menu.dart';
-import 'hamster_race.dart';
-import 'whack_a_mole.dart';
+import 'ai_games/tictactoe.dart';
+import 'ai_games/tictactoe3x4.dart';
+import 'ai_games/shikaku_menu.dart';
+import 'ai_games/hamster_race.dart';
+import 'ai_games/whack_a_mole.dart';
 import 'utils/authentication.dart';
 import 'widgets/google_sign_in_button.dart';
 import '../res/custom_colors.dart';

@@ -1,5 +1,5 @@
 import "package:flutter_test/flutter_test.dart";
-import "package:minigames/tictactoe.dart";
+import "package:minigames/ai_games/tictactoe.dart";
 
 void main() {
     test('_checkForWinner returns true when diagonal cells are filled with the same player', () {
