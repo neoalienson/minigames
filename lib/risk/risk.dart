@@ -23,16 +23,22 @@ class Vs extends StatelessWidget {
     for (int i = 0; i < att; i++) {
       list1.add(const Padding(
         padding: EdgeInsets.all(8),
-        child: FaIcon(FontAwesomeIcons.fistRaised)));
+        child: FaIcon(FontAwesomeIcons.handFist)));
     }
-    list.add(Expanded(child: Row(children: list1, mainAxisAlignment: MainAxisAlignment.center)));
+    list.add(Expanded(child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: list1, 
+      )));
     list.add(const FaIcon(FontAwesomeIcons.bolt));
     for (int i = 0; i < def; i++) {
       list2.add(const Padding(
         padding: EdgeInsets.all(8),
-        child: FaIcon(FontAwesomeIcons.shieldAlt)));      
+        child: FaIcon(FontAwesomeIcons.shieldHalved)));      
     }    
-    list.add(Expanded(child: Row(children: list2, mainAxisAlignment: MainAxisAlignment.center)));
+    list.add(Expanded(child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: list2, 
+      )));
 
     return ElevatedButton(
         style: style,
@@ -88,6 +94,7 @@ class RiskDiceResult extends StatefulWidget {
     required this.def,
   }) : super(key: key);
 
+  // ignore: library_private_types_in_public_api
   @override _RiskDiceResultState createState() => _RiskDiceResultState();
 }
 

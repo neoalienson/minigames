@@ -1,13 +1,13 @@
 import 'dart:math';
 
 class RiskCombat {
-  static RiskResolution resolve(List<int> _atts, List<int> _defs) {
+  static RiskResolution resolve(List<int> atts, List<int> defs) {
     var resolution = RiskResolution();
-    resolution.atts = List.filled(_atts.length, false);
-    resolution.defs = List.filled(_defs.length, false);
+    resolution.atts = List.filled(atts.length, false);
+    resolution.defs = List.filled(defs.length, false);
 
-    for (var i = 0, j = 0; i < _atts.length && j < _defs.length; i++) {
-      if (_atts[i] <= _defs[j]) {
+    for (var i = 0, j = 0; i < atts.length && j < defs.length; i++) {
+      if (atts[i] <= defs[j]) {
         resolution.atts[i] = true;
       } else {
         resolution.defs[j] = true;
