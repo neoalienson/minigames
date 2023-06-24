@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 
 class TicTacToe3x4Page extends StatefulWidget {
+  const TicTacToe3x4Page({super.key});
+
   @override
   TicTacToe3x4PageState createState() => TicTacToe3x4PageState();
 }

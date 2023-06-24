@@ -6,7 +6,10 @@ import 'hamster_race.dart';
 import 'whack_a_mole.dart';
 
 class AIGamesMenuPage extends StatefulWidget {
+  const AIGamesMenuPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _AIGamesMenuState createState() => _AIGamesMenuState();
 }
 
@@ -28,13 +31,13 @@ class _AIGamesMenuState extends State<AIGamesMenuPage> {
         MenuItem(Icons.gamepad, 'Tic Tac Toe', 'A classic game of Xs and Os', 
           (context) => const TicTacToePage()),
         MenuItem(Icons.gamepad, 'Tic Tac Toe 3 players in 4 x 4', 'A modified game in 4 x 4 Grid for 3 players', 
-          (context) => TicTacToe3x4Page()),
+          (context) => const TicTacToe3x4Page()),
         MenuItem(Icons.gamepad, 'Shikaku', 'Shikaku',
-          (context) => ShikakuGameMenu()),
+          (context) => const ShikakuGameMenu()),
         MenuItem(Icons.gamepad, 'Hamster Race', '',
-          (context) => HamsterRaceScreen()),
+          (context) => const HamsterRaceScreen()),
         MenuItem(Icons.gamepad, 'Whack a Hamster', '',
-          (context) => WhackAMoleGame()),
+          (context) => const WhackAMoleGame()),
       ];
 
     for (var i in menu) {
