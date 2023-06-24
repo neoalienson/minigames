@@ -7,6 +7,7 @@ class ShikakuGame extends StatefulWidget {
   const ShikakuGame({Key? key, required this.numbers}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _ShikakuGameState createState() => _ShikakuGameState();
 }
 
