@@ -1,9 +1,10 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:logging/logging.dart';
 
 class HamsterRaceScreen extends StatefulWidget {
+  const HamsterRaceScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _HamsterRaceScreenState createState() => _HamsterRaceScreenState();
 }
 
@@ -62,14 +63,12 @@ class _HamsterRaceScreenState extends State<HamsterRaceScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var race = <Widget>[];
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Hamster Race'),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('images/track.png'),
             repeat: ImageRepeat.repeat,
@@ -97,7 +96,7 @@ class _HamsterRaceScreenState extends State<HamsterRaceScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _resetGame,
-        child: Icon(Icons.refresh),
+        child: const Icon(Icons.refresh),
       ),
     );
   }

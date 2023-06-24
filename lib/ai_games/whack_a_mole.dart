@@ -2,11 +2,12 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:audioplayers/audioplayers.dart';
 
 class WhackAMoleGame extends StatefulWidget {
+  const WhackAMoleGame({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _WhackAMoleGameState createState() => _WhackAMoleGameState();
 }
 
@@ -31,7 +32,6 @@ class _WhackAMoleGameState extends State<WhackAMoleGame> {
   void _startTimer() {
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       final randomIndex = Random().nextInt(10);
-      print(randomIndex);
       setState(() {
         _isVisibleList[randomIndex] = !_isVisibleList[randomIndex];
       });
@@ -39,17 +39,16 @@ class _WhackAMoleGameState extends State<WhackAMoleGame> {
   }
 
   void _stopTimer() {
-    _timer?.cancel();
+    _timer.cancel();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Whack-a-Mole Game'),
+        title: const Text('Whack-a-Mole Game'),
       ),
-      body: Container(
-        child: Column(
+      body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Score: $_score'),
@@ -61,7 +60,6 @@ class _WhackAMoleGameState extends State<WhackAMoleGame> {
             ),
           ],
         ),
-      ),
     );
   }
 
@@ -86,14 +84,14 @@ class HamsterHole extends StatelessWidget {
   final List<bool> isVisibleList;
   final Function(int) onWhacked;
 
-  HamsterHole(this.index, this.isVisibleList, this.onWhacked);
+  const HamsterHole(this.index, this.isVisibleList, this.onWhacked, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => onWhacked(index),
       child: Container(
-        margin: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: isVisibleList[index] ? Colors.yellow : Colors.grey,
           borderRadius: BorderRadius.circular(8),

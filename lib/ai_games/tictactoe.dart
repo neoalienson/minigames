@@ -88,7 +88,7 @@ class TicTacToePageState extends State<TicTacToePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tic Tac Toe'),
+        title: const Text('Tic Tac Toe'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -109,7 +109,7 @@ class TicTacToePageState extends State<TicTacToePage> {
                       child: Center(
                         child: Text(
                           grid[i][j],
-                          style: TextStyle(fontSize: 32),
+                          style: const TextStyle(fontSize: 32),
                         ),
                       ),
                     ),
@@ -119,13 +119,13 @@ class TicTacToePageState extends State<TicTacToePage> {
           if (gameOver)
             Text(
               winner != '' ? '$winner wins!' : 'Draw!',
-              style: TextStyle(fontSize: 24),
+              style: const TextStyle(fontSize: 24),
             ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _restartGame,
-        child: Icon(Icons.refresh),
+        child: const Icon(Icons.refresh),
       ),
     );
   }
