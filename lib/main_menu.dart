@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minigames/risk/risk.dart';
 import 'tictactoe.dart';
 import 'tictactoe3x4.dart';
 import 'shikaku_menu.dart';
@@ -55,6 +56,8 @@ class _MainMenuPageState extends State<MainMenuPage> {
           (context) => HamsterRaceScreen()),
         MenuItem(Icons.gamepad, 'Whack a Hamster', '',
           (context) => WhackAMoleGame()),
+        MenuItem(Icons.map_rounded, 'Risk Dices', 'Throw dices and resolve',
+          (context) => RiskDiceSelection()),
       ];
 
     for (var i in menu) {

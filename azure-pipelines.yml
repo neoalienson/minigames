@@ -5,7 +5,10 @@ pool:
   name: Default
 
 steps:
-- script: flutter test
+- script: |
+    flutter pub global activate junitreport
+    mkdir -p test-results
+    flutter test --machine | tojunit --output test-results/output.xml
   displayName: 'Test'
 - script: flutter build web --base-href "/minigames/"
   displayName: 'Build'
