@@ -6,12 +6,18 @@ pool:
 
 steps:
 - script: |
+    flutter analyze
+  displayName: 'Lint'
+
+- script: |
     flutter pub global activate junitreport
     mkdir -p test-results
-    flutter test --machine | tojunit --output test-results/output.xml
+    flutter test --machine | $HOME/.pub-cache/bin/tojunit --output test-results/output.xml
   displayName: 'Test'
+
 - script: flutter build web --base-href "/minigames/"
   displayName: 'Build'
+
 - script: |
     cp -r assets/* build/web/assets
     zip -r flutter.zip build/web
