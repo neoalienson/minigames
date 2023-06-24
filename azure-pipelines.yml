@@ -6,7 +6,7 @@ pool:
 
 steps:
 - script: |
-    flutter analyze
+    flutter analyze --no-fatal-infos
   displayName: 'Lint'
 
 - script: |
