@@ -107,7 +107,7 @@ class _RiskDiceResultState extends State<RiskDiceResult> {
     const FaIcon(FontAwesomeIcons.diceFive),
     const FaIcon(FontAwesomeIcons.diceSix),
   ];
-  final FaIcon _dizzy = const FaIcon(FontAwesomeIcons.dizzy);
+  final FaIcon _dizzy = const FaIcon(FontAwesomeIcons.faceDizzy);
   final Text _empty = const Text('');
   var _dices = RiskDices();
   var _resolution = RiskResolution();
