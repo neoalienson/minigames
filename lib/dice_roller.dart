@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'dart:collection';
 import 'package:flutter/material.dart';
 
 class DiceRoller extends StatefulWidget {
