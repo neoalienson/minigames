@@ -12,8 +12,14 @@ steps:
 - script: |
     flutter pub global activate junitreport
     mkdir -p test-results
-    flutter test --machine | $HOME/.pub-cache/bin/tojunit --output test-results/output.xml
+    flutter test --machine | $HOME/.pub-cache/bin/tojunit --output test-results/TEST-output.xml
   displayName: 'Test'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'test-results/TEST-*.xml'
+    failTaskOnFailedTests: true
 
 - script: flutter build web --base-href "/minigames/"
   displayName: 'Build'
