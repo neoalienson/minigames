@@ -56,6 +56,27 @@ Prompt:
 - Non-nullable instance field '_timer' must be initialized.
 - _isVisibleList is not defined in HamsterHole
 
+## Scrum sizing card
+GPT3.5 turbo
+Prompt:
+- you are a flutter developer. Write a app page for scrum sizing
+
+## Chess (WIP)
+GPT3.5 turbo
+Prompt:
+- write a flutter app for chess board with chess pieces. player can take turn to move the chess
+
+## Go Chess (WIP)
+GPT3.5 turbo
+Prompt:
+- you are a flutter developer, write a page with a 9x9 go chess board. players can take turn a play. check if the chess can be played. remove dead chess piece. show no. of dead chess piece. calculate score after each move.
+- you are a dart developer. develop a strategy to check if a go chess piece should be remove from a go chess board.
+
+# Roll Dice
+GPT3.5 turbo
+Prompt:
+- You are a flutter developer. You write code that follows SOLID and DRY principles. Write a page to throw 3 dice with random result display. Display the sum. Display message if double or triple. The message also describe the roll of double and triple. Write unit tests to test the logic that determinate double and triple but not test the message output. the unit test coverts every edge cases.
+
 ## Flappy Bird (WIP)
 Prompt:
 - create a flappy bird game in flutter. focus on the background scrolling. background scroll from right to left slowly, and then repeat.

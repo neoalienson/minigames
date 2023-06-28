@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:minigames/ai_apps/scrum_sizing.dart';
+import 'package:minigames/ai_games/chess.dart';
+import 'package:minigames/ai_games/chinese_chess.dart';
 import 'package:minigames/ai_games/main_menu_ai_games.dart';
+import 'package:minigames/ai_games/go_chess.dart';
+import 'package:minigames/dice_roller.dart';
 import 'package:minigames/risk/risk.dart';
 import 'utils/authentication.dart';
 import 'widgets/google_sign_in_button.dart';
@@ -49,7 +54,17 @@ class _MainMenuPageState extends State<MainMenuPage> {
           (context) => const AIGamesMenuPage()),
         MenuItem(Icons.map_rounded, 'Risk Dices', 'Throw dices and resolve',
           (context) => const RiskDiceSelection()),
-      ];
+        MenuItem(Icons.map_rounded, 'Roll Dices', 'Throw dices',
+          (context) => const DiceRoller()),
+        // MenuItem(Icons.map_rounded, 'Go Chess', 'Go chess game',
+        //   (context) => const GoChess()),
+        // MenuItem(Icons.map_rounded, 'Scrum Sizing', '',
+        //   (context) => const ScrumSizingPage()),
+        // MenuItem(Icons.map_rounded, 'Chess', '',
+        //   (context) => const ChessBoardPage()),
+        // MenuItem(Icons.map_rounded, 'Chinese Chess', '',
+        //   (context) => const ChineseChessBoardPage()),
+        ];
 
     for (var i in menu) {
       widgets.add(
