@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:minigames/ai_games/main_menu_ai_games.dart';
 import 'package:minigames/dice_roller.dart';
 import 'package:minigames/risk/risk.dart';
+import 'package:minigames/spin_wheel.dart';
 import 'utils/authentication.dart';
 import 'widgets/google_sign_in_button.dart';
 import '../res/custom_colors.dart';
@@ -52,6 +53,8 @@ class _MainMenuPageState extends State<MainMenuPage> {
           (context) => const RiskDiceSelection()),
         MenuItem(Icons.map_rounded, 'Roll Dices', 'Throw dices',
           (context) => const DiceRoller()),
+        MenuItem(Icons.map_rounded, 'Spin Wheel', 'Spin Wheel',
+           (context) => const SpinWheelWidget(items: ["aaa"])),          
         // MenuItem(Icons.map_rounded, 'Go Chess', 'Go chess game',
         //   (context) => const GoChess()),
         // MenuItem(Icons.map_rounded, 'Scrum Sizing', '',
