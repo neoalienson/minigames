@@ -54,7 +54,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
         MenuItem(Icons.map_rounded, 'Roll Dices', 'Throw dices',
           (context) => const DiceRoller()),
         MenuItem(Icons.map_rounded, 'Spin Wheel', 'Spin Wheel',
-           (context) => const SpinWheelWidget(items: ["aaa"])),          
+           (context) => const SpinWheelWidget(items: ["aaa", "bbb", "ccc", "ddd", "eee"])),          
         // MenuItem(Icons.map_rounded, 'Go Chess', 'Go chess game',
         //   (context) => const GoChess()),
         // MenuItem(Icons.map_rounded, 'Scrum Sizing', '',

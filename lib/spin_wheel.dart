@@ -26,7 +26,7 @@ class SpinWheelWidgetState extends State<SpinWheelWidget>
           height: 200,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(color: Colors.black, width: 2),
+            border: Border.all(color: Colors.green, width: 2),
           ),
           child: Stack(
             children: [
@@ -64,12 +64,12 @@ class SpinWheelWidgetState extends State<SpinWheelWidget>
         angle: index * sliceAngle,
         child: Container(
           width: 200,
-          height: 100,
+          height: 200,
           child: Align(
             alignment: Alignment.bottomCenter,
             child: Text(
               widget.items[index],
-              style: const TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20, color: Colors.amber),
             ),
           ),
         ),
