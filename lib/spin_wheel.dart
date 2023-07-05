@@ -15,6 +15,7 @@ class SpinWheelWidget extends StatefulWidget {
 class SpinWheelWidgetState extends State<SpinWheelWidget> 
     with SingleTickerProviderStateMixin{
   String _resultText = '';
+  int index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -60,15 +61,15 @@ class SpinWheelWidgetState extends State<SpinWheelWidget>
     final sliceAngle = 2 * pi / widget.items.length;
     return List.generate(
       widget.items.length,
-      (index) => Transform.rotate(
-        angle: index * sliceAngle,
+      (idx) => Transform.rotate(
+        angle: idx * sliceAngle,
         child: Container(
           width: 200,
           height: 200,
           child: Align(
             alignment: Alignment.bottomCenter,
             child: Text(
-              widget.items[index],
+              widget.items[idx],
               style: const TextStyle(fontSize: 20, color: Colors.amber),
             ),
           ),
