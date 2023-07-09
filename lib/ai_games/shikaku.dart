@@ -7,11 +7,12 @@ class ShikakuGame extends StatefulWidget {
   const ShikakuGame({Key? key, required this.numbers}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
-  _ShikakuGameState createState() => _ShikakuGameState();
+  ShikakuGameState createState() => ShikakuGameState(numbers);
 }
 
-class _ShikakuGameState extends State<ShikakuGame> {
+@visibleForTesting
+class ShikakuGameState extends State<ShikakuGame> {
+  final List<int> numbers;
   late List<List<int>> grid;
   late int rows;
   late int cols;
@@ -40,12 +41,15 @@ class _ShikakuGameState extends State<ShikakuGame> {
     Colors.deepPurple,
   ];
 
+  ShikakuGameState(this.numbers) {
+    rows = sqrt(numbers.length).floor();
+    cols = (numbers.length / rows).ceil().toInt();
+    grid = List.generate(rows, (row) => List.generate(cols, (col) => 0));
+  }
+
   @override
   void initState() {
     super.initState();
-    rows = sqrt(widget.numbers.length).floor();
-    cols = (widget.numbers.length / rows).ceil().toInt();
-    grid = List.generate(rows, (row) => List.generate(cols, (col) => 0));
   }
 
   bool checkWin() {
@@ -131,7 +135,7 @@ class _ShikakuGameState extends State<ShikakuGame> {
     
     for (int row = startRow; row <= endRow; row++) {
       for (int col = startCol; col <= endCol; col++) {
-        int number = widget.numbers[row * cols + col];
+        int number = numbers[row * cols + col];
         if (number > 0) {
           if (selectedNumber == -1) {
             selectedNumber = number;
@@ -195,7 +199,7 @@ class _ShikakuGameState extends State<ShikakuGame> {
                       ),
                       child: Center(
                         child: Text(
-                          '${widget.numbers[row * cols + col]}',
+                          '${numbers[row * cols + col]}',
                           style: const TextStyle(fontSize: 24),
                         ),
                       ),
