@@ -19,7 +19,11 @@ class SpinWheelWidgetState extends State<SpinWheelWidget>
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return  Scaffold(
+      appBar: AppBar(
+        title: const Text('Dice Roller'),
+      ),
+      body: Center(child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
@@ -54,7 +58,7 @@ class SpinWheelWidgetState extends State<SpinWheelWidget>
         const SizedBox(height: 20),
         Text(_resultText),
       ],
-    );
+    )));
   }
 
   List<Widget> _buildSlices() {
